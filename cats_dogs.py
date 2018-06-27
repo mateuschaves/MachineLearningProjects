@@ -17,12 +17,11 @@ bichinho2 = [1, 0, 1]
 bichinho3 = [0, 1, 1]
 bichinho4 = [1, 1, 0]
 bichinho5 = [0, 1, 0]
-bichinho6 = [0, 1, 0]
 
-dados = [bichinho1, bichinho2, bichinho3, bichinho4, bichinho5, bichinho6]
+dados = [bichinho1, bichinho2, bichinho3, bichinho4, bichinho5]
 
 #Se GATO = 1 / Se CACHORRO = -1
-marcacoes = [1, 1, 1, -1, -1, -1]
+marcacoes = [1, 1, 1, -1, -1]
 
 ######################## 2 CRIANDO MODELO   ################################################  
 from sklearn.naive_bayes import MultinomialNB
@@ -53,17 +52,21 @@ total_de_elementos = len(teste)
 
 taxa_de_acerto = 100.0 * total_de_acertos / total_de_elementos
 
-print("1: Gato e -1: Cachorro")
+print("1: Gato e -1: Cachorro\n")
 
-print("Resultado: ")
-print(resultado)
+if(resultado[0] == 1 and marcacoes_teste[0] == 1):
+	print("O bichinho 1 é um gato, o algoritmo acertou !\n")
+else:
+	print("O bichinho 1 é um cachorro, o algoritmo errou !\n")
 
-print ("Marcacoes: ")
-print(marcacoes_teste)
+if(resultado[1] == 1 and marcacoes_teste[1] == 1):
+	print("O bichinho 2 é um gato, o algoritmo acertou !\n")
+else:
+	print("O bichinho 2 é um cachorro, o algoritmo errou !\n")
 
-print("Diferencas: ")
-print(diferencas)
+if(resultado[2] == 1 and marcacoes_teste[2] == 1):
+	print("O bichinho 3 é um gato, o algoritmo acertou !\n")
+else:
+	print("O bichinho 3 é um cachorro, o algoritmo errou !\n")
 
-
-print("Taxa de acerto do Algoritmo: ")
-print(taxa_de_acerto)
+print("Taxa de acerto do Algoritmo: {}%".format(taxa_de_acerto))
